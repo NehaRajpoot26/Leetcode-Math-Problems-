@@ -1,0 +1,43 @@
+Given an integer num, return the number of digits in num that divide num.
+
+An integer val divides nums if nums % val == 0.
+
+Example 1:
+
+Input: num = 7
+Output: 1
+Explanation: 7 divides itself, hence the answer is 1.
+Example 2:
+
+Input: num = 121
+Output: 2
+Explanation: 121 is divisible by 1, but not 2. Since 1 occurs twice as a digit, we return 2.
+
+Approach
+If num>=1 && num<=9, simply return 1.As there is no need to count the digits that divide the number.
+Run a for loop to break num into individual digits.Individual digit is taken in an integer variable named as c.
+Check whether c divides the num. If c divides the num increment s1.
+Return s1.
+
+Complexity
+Time complexity:0 ms
+Space complexity:6.24 MB
+
+Solution in C++
+class Solution {
+public:
+    int countDigits(int num) {
+        int s1=0;
+        if(num>=1 && num<=9)
+        return 1;
+        else{
+        for(int i=num;i>0;i=i/10)
+        {
+            int c=i%10;
+            if((num%c)==0)
+            s1++;
+        }
+        return s1;
+        }
+    }
+};
