@@ -19,10 +19,6 @@ Run a for loop to break num into individual digits.Individual digit is taken in 
 Check whether c divides the num. If c divides the num increment s1.
 Return s1.
 
-Complexity
-Time complexity:0 ms
-Space complexity:6.24 MB
-
 Solution in C++
 class Solution {
 public:
@@ -41,3 +37,7 @@ public:
         }
     }
 };
+
+Complexity
+Time complexity:0 ms
+Space complexity:6.24 MB
