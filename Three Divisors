@@ -1,0 +1,38 @@
+Given an integer n, return true if n has exactly three positive divisors. Otherwise, return false.
+An integer m is a divisor of n if there exists an integer k such that n = k * m.
+
+Example 1:
+Input: n = 2
+Output: false
+Explantion: 2 has only two divisors: 1 and 2.
+
+Example 2:
+Input: n = 4
+Output: true
+Explantion: 4 has three divisors: 1, 2, and 4.
+
+Approach:-
+1. Initialize an integer variable named s=0 for count the positive divisors.
+2. Run a for loop from i=1 to i<=n
+3. If i is a divisor of n,then increment s.
+4. If (s==3) return true.Else return false.
+
+Solution in C++
+class Solution {
+public:
+    bool isThree(int n) {
+        int s=0;
+        for(int i=1;i<=n;i++)
+        {
+            if(n%i==0)
+            s++;
+        }
+        if(s==3)return true;
+        else
+        return false;
+    }
+};
+
+Complexity
+Time complexity:0 ms
+Space complexity:6.32 MB
