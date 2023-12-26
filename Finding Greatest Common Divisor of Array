@@ -1,0 +1,37 @@
+Given an integer array nums, return the greatest common divisor of the smallest number and largest number in nums.
+The greatest common divisor of two numbers is the largest positive integer that evenly divides both numbers.
+Example 1:
+Input: nums = [2,5,6,9,10]
+Output: 2
+Explanation:
+The smallest number in nums is 2.
+The largest number in nums is 10.
+The greatest common divisor of 2 and 10 is 2.
+
+Approach:-
+1. Sort the vector array named as **nums**.
+2. Store **nums[0]** in an integer variable named as **n**.
+3. Store last element of **nums** in **n1**.
+4. Run a for loop from **i=1** to **i<=n**.
+5. **if(n%i==0 && n1%i==0)** then store **ith** iteration in **s**.
+6. Return **s** as an output.
+
+Solution in C++
+class Solution {
+public:
+    int findGCD(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int s=0;
+        int n=nums[0];
+        int n1=nums[nums.size()-1];
+        for(int i=1;i<=n;i++)
+        {
+            if(n%i==0 && n1%i==0)
+           s=i;
+        }
+        return s;
+    }
+Complexity
+Time complexity:3 ms
+Space complexity:12.86 MB
+};
