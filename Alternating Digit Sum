@@ -1,0 +1,50 @@
+You are given a positive integer n. Each digit of n has a sign according to the following rules:
+The most significant digit is assigned a positive sign.
+Each other digit has an opposite sign to its adjacent digits.
+Return the sum of all digits with their corresponding sign.
+
+Example 1:
+Input: n = 521
+Output: 4
+Explanation: (+5) + (-2) + (+1) = 4.
+
+Example 2:
+Input: n = 111
+Output: 1
+Explanation: (+1) + (-1) + (+1) = 1.
+
+Approach:-
+Initialize i1=-1,s=0,rev=0,a=1.
+s=0 will help to calculate sum of individual disits.
+rev=0 will be used to reverse a n.
+i1=-1 will help to make a number negative by multiplying it with c.
+Run a for loop from i=n to i>0 .
+Calculate reverse of n into a variable named as rev.
+Run a for loop from i=rev to i>0.
+Calculate last element of rev into an integer variable named as c.
+If (a%2==0),then calculate sum as the following s+=(c*(-1)).
+Else s+=c.
+Increment a, so that we can identify whether it is an even position or not.
+
+Solution in C++
+class Solution {
+public:
+    int alternateDigitSum(int n) {
+        int i1=-1,s=0,rev=0,a=1;
+        for(int i=n;i>0;i=i/10)
+        {
+            int c=i%10;
+            rev=(rev*10)+c;
+        }
+        for(int i=rev;i>0;i=i/10)
+        {
+            int c=i%10;
+           if(a%2==0)
+           s+=(c*(-1));
+           else
+           s+=c;
+           a++;
+        }
+        return s;
+    }
+};
