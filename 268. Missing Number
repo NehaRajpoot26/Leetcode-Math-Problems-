@@ -1,0 +1,25 @@
+Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+
+Example 1:
+Input: nums = [3,0,1]
+Output: 2
+Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
+
+Solution in C++
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        vector<int>v;
+        int i;
+        for(int i1=0;i1<nums.size();i1++)
+            v.push_back(i1);
+        for(i=0;i<nums.size();i++)
+        {
+            if(nums[i]!=v[i])
+            return v[i];
+        }
+        return i;
+    }
+};
